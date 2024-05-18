@@ -112,14 +112,16 @@ def read(jobs, q):
             fdata = fdata.ravel()
             if 'sr' in openfiles[jname].root.__members__:
                 sr = openfiles[jname].root.sr[0]
+                print('Using sampling rate: {}'.format(sr))
             else:
-                sr = 32000.
+                #sr = 32000.
+                raise ValueError('No sampling rate for the data found.')
             ts = 1/sr
             # here we need to shift the data according to job['start']
             atimes = np.linspace(0, fdata.shape[0]/(sr/1000), fdata.shape[0])
             atimes += job['start']/(sr/1000)
             data = (fdata, atimes, ts)
- 
+
             job.update(filename='data_' + jname + '.h5')
 
 
