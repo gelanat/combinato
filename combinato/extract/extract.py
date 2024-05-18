@@ -51,8 +51,8 @@ def main():
                         help='scheme for re-referencing')
     args = parser.parse_args()
 
-    if ((args.files is None) and 
-        (args.matfile is None) and 
+    if ((args.files is None) and
+        (args.matfile is None) and
         (args.jobs is None)):
 
         parser.print_help()
@@ -89,7 +89,7 @@ def main():
         jobs = []
         for f in files:
             size = get_h5size(f)
-            starts = list(range(0, size, 32000*5*60))
+            starts = list(range(0, size, 30000*5*60))
             stops = starts[1:] + [size]
             name = os.path.splitext(os.path.basename(f))[0]
 
