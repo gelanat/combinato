@@ -46,7 +46,7 @@ options = {
     # Folder names the GUI should include
     'folder_patterns': ('CSC*', 'test', 'L??',
                         'R??', 'L???', 'R???', 'L????', 'R????',
-                        'simulation_*'),
+                        'simulation_*', '*chan*',),
 
     # Use this option to create raster plots in css-gui
     # This requires 'raster_options', see Documentation
