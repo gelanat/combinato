@@ -111,7 +111,7 @@ def read(jobs, q):
                 raise Warning('Data has wrong number of dimensions')
             fdata = fdata.ravel()
             if 'sr' in openfiles[jname].root.__members__:
-                sr = openfiles[jname].root.sr[0]
+                sr = float(openfiles[jname].root.sr.read())
                 print('Using sampling rate: {}'.format(sr))
             else:
                 #sr = 32000.
