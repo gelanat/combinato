@@ -1,5 +1,14 @@
 # Combinato Spike Sorting
 
+**NOTE** this version of combinato has been edited from the main branch.
+
+Edits / updates include:
+- update loading of hdf5 files to require a sampling rate argument
+- update block size extraction to assume 30K sampling rate
+- a change to the files that the GUI can see / load (include *chan*)
+
+The above changes are designed to make combinato easier to use in the HSNPipeline, including for different sampling rate files (e.g. BlackRock files that are sampled at 30K as compared to the NeuraLynx files at 32K that combinato assumes).
+
 ## Introduction
 _Combinato Spike Sorting_ is a software for spike extraction, automatic spike sorting, manual improvement of sorting, artifact rejection, and visualization of continuous recordings and spikes. It offers a toolchain that transforms raw data into single/multi-unit spike trains. The software is largely modular, thus useful also if you are interested in just extraction or just sorting of spikes.
 
@@ -7,7 +16,7 @@ Combinato Spike Sorting works very well with large raw data files (tested with 1
 
 Combinato is a collection of a few command-line tools and two GUIs, written in Python and depending on a few standard modules. It is being developed mostly for Linux, but it works on Windows and OS X, too.
 
-The documentation of Combinato is maintained as a [Wiki](../../wiki). 
+The documentation of Combinato is maintained as a [Wiki](../../wiki).
 
 ## Installing Combinato
 - [Installation on Linux](../../wiki/Installation-on-Linux) (recommended)
@@ -24,7 +33,7 @@ Please walk through our instructive Tutorial.
 - [FAQ](../../wiki/FAQ)
 - [Details](../../wiki/Details)
 
-## Citing Combinato 
+## Citing Combinato
 
 When using Combinato in your work, please cite [this paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166598):
 
